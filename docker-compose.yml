@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  # We have 2 services: the database, the db seeder 
+  # it's needed to create de database before perform any operation on it
+  db:
+    image: mariadb:10.6.2-focal
+    container_name: mariadb_test
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"       
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: market_app
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    restart: unless-stopped
+    volumes: 
+      - ./sql:/docker-entrypoint-initdb.d/:rw 
+    ports:
+      - "3306:3306"
+    networks:
+      - keycloak_spring_boot 
+
+volumes:
+  db.sql:
+
+networks: 
+  keycloak_spring_boot:
