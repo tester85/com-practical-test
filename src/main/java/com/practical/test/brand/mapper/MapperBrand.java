@@ -15,5 +15,5 @@ public class MapperBrand {
         .id(brand.getId())
         .brand(brand.getBrand())
         .build();
-    }
+    } 
 }

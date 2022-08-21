@@ -1,11 +1,16 @@
 package com.practical.test.price.domain;
 
 import java.util.Date;
-
+ 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.practical.test.brand.domain.Brand;
+import com.practical.test.product.domain.Product;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,9 +31,10 @@ public class Price {
     @Id
     @Column(name = "ID", nullable = false)
     Integer id;
-
-    @Column(name = "BRAND_ID", nullable = false)
-    Integer brandId;
+ 
+    @ManyToOne
+    @JoinColumn(name = "BRAND_ID", nullable = false)
+    Brand brandId;
 
     @Column(name = "START_DATE")
     Date startDate;
@@ -38,9 +44,10 @@ public class Price {
 
     @Column(name = "PRICE_LIST")
     Integer priceList;
-
-    @Column(name = "PRODUCT_ID", nullable = false)
-    Integer productId;
+ 
+    @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID", nullable = false)
+    Product productId;
 
     @Column(name = "PRIORITY")  
     Integer priority;
