@@ -1,0 +1,24 @@
+server:
+    port: 8080
+spring:
+    mvc:
+      pathmatch:
+        matching-strategy: ANT_PATH_MATCHER
+    security:
+      user:
+        name: test
+        password: test
+        roles:
+        - SUPERUSER   
+    datasource:
+      url: jdbc:mariadb://172.22.0.2:3306/market
+      username: root
+      password: root
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      open-in-view: true
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MariaDB102Dialect
