@@ -1,23 +1,22 @@
 package com.practical.test.brand.service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
+import java.util.NoSuchElementException; 
+import org.springframework.stereotype.Service; 
 import com.practical.test.brand.domain.Brand;
-import com.practical.test.brand.repository.BrandRepository;
-import com.practical.test.common.exception.ResourceNotFoundException;
+import com.practical.test.brand.repository.BrandRepository; 
 
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
 public class BrandServiceImpl implements BrandService {
-
-    @Autowired
+ 
     BrandRepository brandRepo;
+
+    public BrandServiceImpl(BrandRepository brandRepo) {
+        this.brandRepo = brandRepo;
+    }
 
     @Override
     public List<Brand> getBrandList() {

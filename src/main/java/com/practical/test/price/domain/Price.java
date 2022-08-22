@@ -25,36 +25,36 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "PRICE")
+@Table(name = "price")
 public class Price {
     
     @Id
-    @Column(name = "ID", nullable = false)
+    @Column(name = "id", nullable = false)
     Integer id;
  
     @ManyToOne
-    @JoinColumn(name = "BRAND_ID", nullable = false)
+    @JoinColumn(name = "brand_id", nullable = false)
     Brand brandId;
 
-    @Column(name = "START_DATE")
+    @Column(name = "start_date")
     Date startDate;
 
-    @Column(name = "END_DATE")
+    @Column(name = "end_date")
     Date endDate;
 
-    @Column(name = "PRICE_LIST")
+    @Column(name = "price_list")
     Integer priceList;
  
     @ManyToOne
-    @JoinColumn(name = "PRODUCT_ID", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     Product productId;
 
-    @Column(name = "PRIORITY")  
+    @Column(name = "priority")  
     Integer priority;
 
-    @Column(name = "PRICE", precision = 10, scale = 2)  
+    @Column(name = "price", precision = 10, scale = 2)  
     Float price;
 
-    @Column(name = "CURR", nullable = false, length = 3)
+    @Column(name = "curr", nullable = false, length = 3)
     String curr;
 }

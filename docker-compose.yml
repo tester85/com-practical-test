@@ -12,15 +12,15 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     restart: unless-stopped
-    # volumes: 
-    #   - ./sql:/docker-entrypoint-initdb.d/:rw 
+    volumes: 
+      - ./sql:/docker-entrypoint-initdb.d/:rw 
     ports:
       - "3306:3306"
     networks:
       - db_spring_boot
 
-# volumes:
-#   db.sql:
+volumes:
+  db.sql:
 
 networks: 
   db_spring_boot:

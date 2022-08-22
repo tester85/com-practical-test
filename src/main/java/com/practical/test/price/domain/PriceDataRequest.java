@@ -14,7 +14,7 @@ import lombok.Value;
 @Value 
 @Builder
 @AllArgsConstructor
-public class PriceDtoRequest {
+public class PriceDataRequest {
     Integer id;
     Brand brandId;
     @JsonFormat(pattern = "yyyy-MM-dd-HH.mm.ss")

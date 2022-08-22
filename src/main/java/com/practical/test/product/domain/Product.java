@@ -13,13 +13,13 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor  
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "product")
 public class Product {
     
     @Id
-    @Column(name = "ID")
+    @Column(name = "id")
     Integer id;
-    @Column(name = "PRODUCT")
+    @Column(name = "product")
     String product;
     
 }

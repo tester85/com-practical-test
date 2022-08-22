@@ -2,8 +2,7 @@ package com.practical.test.product.service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
-import org.springframework.beans.factory.annotation.Autowired;
+ 
 import org.springframework.stereotype.Service;
  
 import com.practical.test.product.domain.Product;
@@ -15,8 +14,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
     ProductRepository productRepo; 
+
+    public ProductServiceImpl(ProductRepository productRepo) {
+        this.productRepo = productRepo;
+    }
 
     @Override
     public List<Product> getProductList() {

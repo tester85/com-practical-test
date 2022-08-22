@@ -6,9 +6,9 @@ import com.practical.test.product.domain.Product;
 import lombok.Builder;
 import lombok.Value;
 
-@Value
+@Value 
 @Builder
-public class PriceDtoResponse {
+public class PriceDataResponse {
     Product productId;
     Brand brandId;
     Integer priceList;

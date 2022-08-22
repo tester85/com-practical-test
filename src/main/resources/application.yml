@@ -14,13 +14,13 @@ spring:
       url: jdbc:mariadb://172.23.0.2:3306/market_app
       username: root
       password: root
-    sql:
-      init:
-        mode: embedded     
+    # sql:
+    #   init:
+    #     mode: embedded     
     jpa:
       show-sql: true
       hibernate:
-        ddl-auto: update
+        ddl-auto: none
       open-in-view: true
       properties:
         hibernate:

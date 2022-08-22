@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
 import com.practical.test.price.domain.Price;
-import com.practical.test.price.domain.PriceDtoResponse;
+import com.practical.test.price.domain.PriceDataResponse;
 
 @Component
 @Mapper(componentModel = "spring")
@@ -15,8 +15,8 @@ public class MapperPriceResponse {
  
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH.mm.ss");
     
-    public PriceDtoResponse toDto(Price price){
-        return PriceDtoResponse.builder()
+    public PriceDataResponse toResponse(Price price){
+        return PriceDataResponse.builder()
         .productId(price.getProductId())
         .brandId(price.getBrandId())
         .priceList(price.getPriceList())

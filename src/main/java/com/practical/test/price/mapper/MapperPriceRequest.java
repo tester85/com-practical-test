@@ -4,18 +4,18 @@ import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
 import com.practical.test.price.domain.Price;
-import com.practical.test.price.domain.PriceDtoRequest;
+import com.practical.test.price.domain.PriceDataRequest;
 
 @Component
 @Mapper(componentModel = "spring")
 public class MapperPriceRequest {
  
-    public PriceDtoRequest toDto(Price price){
-        return PriceDtoRequest.builder()
+    public PriceDataRequest toRequest(Price price){
+        return PriceDataRequest.builder()
         .id(price.getId())
         .brandId(price.getBrandId())
         .applicationDate(price.getStartDate())
         .build();
     }
-    
+ 
 }
