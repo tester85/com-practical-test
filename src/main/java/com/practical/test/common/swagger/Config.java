@@ -7,18 +7,22 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.spring.web.plugins.Docket; 
 
-@Configuration
+@Configuration 
 @EnableWebMvc
 public class Config {
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
         .select()
-        .apis(RequestHandlerSelectors.any())
+        .apis(RequestHandlerSelectors.any())        
         .paths(PathSelectors.any())
-        .build();  
+        .build();
+        // .apis(RequestHandlerSelectors.basePackage("com.practical.test.price.controller"))
+        // .apis(RequestHandlerSelectors.basePackage("com.practical.test.price.brand"))
+        // .apis(RequestHandlerSelectors.basePackage("com.practical.test.price.product"))
+        // .apis(RequestHandlerSelectors.basePackage("com.practical.test"))
     }
     
 }

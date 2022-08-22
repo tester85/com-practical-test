@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 import org.springframework.stereotype.Service;
 
 import com.practical.test.price.domain.Price;
+import com.practical.test.price.domain.PriceDataRequest;
 import com.practical.test.price.repository.PriceRepository; 
 
 import lombok.extern.slf4j.Slf4j;
@@ -52,6 +53,13 @@ public class PriceServiceImpl implements PriceService {
             priceRepo.delete(getPriceById(id));
         }
         else throw new NoSuchElementException("Price not found with id: "+id.toString());
+    }
+
+    @Override
+    public Price getDataByPrice(PriceDataRequest priceData) {
+        return priceRepo.getDataByPrice(priceData)
+        .stream().findFirst()
+        .orElseThrow(NoSuchElementException::new);
     } 
     
 

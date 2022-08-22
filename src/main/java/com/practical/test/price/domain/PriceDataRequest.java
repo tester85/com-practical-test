@@ -2,8 +2,7 @@ package com.practical.test.price.domain;
 
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.practical.test.brand.domain.Brand;
+import com.fasterxml.jackson.annotation.JsonFormat; 
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

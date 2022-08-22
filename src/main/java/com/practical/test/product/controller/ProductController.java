@@ -37,7 +37,7 @@ public class ProductController {
         this.mapperProduct = mapperProduct;
     }
 
-    @GetMapping("/")
+    @GetMapping()
     @ResponseBody
     public List<ProductDto> getProduct() {
         log.info("ProductDto EndPoint");

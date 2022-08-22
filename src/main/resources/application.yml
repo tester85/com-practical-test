@@ -25,3 +25,13 @@ spring:
       properties:
         hibernate:
           dialect: org.hibernate.dialect.MariaDB102Dialect
+
+management:
+  server:
+    base-path: /manage
+    port: 9000
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
