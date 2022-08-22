@@ -17,8 +17,8 @@ public class MapperPriceResponse {
     
     public PriceDataResponse toResponse(Price price){
         return PriceDataResponse.builder()
-        .productId(price.getProductId())
-        .brandId(price.getBrandId())
+        .productId(price.getProductId().getId())
+        .brandId(price.getBrandId().getId())
         .priceList(price.getPriceList())
         .startDate(dateFormat.format(price.getStartDate()))
         .endDate(dateFormat.format(price.getEndDate()))

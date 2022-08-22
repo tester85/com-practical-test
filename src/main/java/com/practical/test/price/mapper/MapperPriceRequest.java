@@ -12,8 +12,8 @@ public class MapperPriceRequest {
  
     public PriceDataRequest toRequest(Price price){
         return PriceDataRequest.builder()
-        .id(price.getId())
-        .brandId(price.getBrandId())
+        .productId(price.getProductId().getId())
+        .brandId(price.getBrandId().getId())
         .applicationDate(price.getStartDate())
         .build();
     }

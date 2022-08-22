@@ -1,7 +1,4 @@
-package com.practical.test.price.domain;
-
-import com.practical.test.brand.domain.Brand;
-import com.practical.test.product.domain.Product;
+package com.practical.test.price.domain; 
 
 import lombok.Builder;
 import lombok.Value;
@@ -9,8 +6,8 @@ import lombok.Value;
 @Value 
 @Builder
 public class PriceDataResponse {
-    Product productId;
-    Brand brandId;
+    Integer productId;
+    Integer brandId;
     Integer priceList;
     String startDate;
     String endDate;
